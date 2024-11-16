@@ -38,8 +38,8 @@ public class UserController {
 
     @PatchMapping
     @Operation(description = "Изменение данных пользователя")
-    UserOutDto patchUser(@RequestHeader @Positive long userId,
-                         @RequestHeader String password,
+    UserOutDto patchUser(@RequestHeader(required = false) @Positive long userId,
+                         @RequestHeader(required = false) String password,
                          @RequestBody @Valid UserPatchDto userPatchDto) {
         UserOutDto userOutDto = service.patch(userId, password, userPatchDto);
         log.info("Данные пользователя с Id {} обновлены", userOutDto.getId());
@@ -48,7 +48,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     @Operation(description = "Получение данных о пользователе")
-    UserOutDto getUser(@RequestHeader @Positive long userId,
+    UserOutDto getUser(@RequestHeader @Positive Long userId,
                        @RequestHeader String password,
                        @PathVariable long id) {
         UserOutDto userOutDto = service.getUserById(userId, password, id);

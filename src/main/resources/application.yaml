@@ -7,18 +7,14 @@ spring:
     init:
       mode: never
   datasource:
-    url: jdbc:postgresql://localhost:6542/user?createDatabaseIfNotExist=true
+    url: jdbc:postgresql://localhost:5432/user?createDatabaseIfNotExist=true
     driverClassName: org.postgresql.Driver
     username: user
     password: user
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      naming:
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
       ddl-auto: none
     show-sql: false
-    properties:
-      hibernate:
-        format_sql: true
 
-    generate-ddl: true
+

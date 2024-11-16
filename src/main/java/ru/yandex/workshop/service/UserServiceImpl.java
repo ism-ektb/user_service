@@ -60,14 +60,13 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public UserOutDto getUserById(Long userId, String password, Long id) {
-        User user = isValidUser(userId, password);
-        if (user.getId() == id) return mapper.modelToDtoForSelf(user);
-        else {
-            User findUser = repository.findById(id).orElseThrow(() -> new NoFoundObjectException(
-                    String.format("Пользователь с id {} не найден", id)));
-            return mapper.modelToDto(findUser);
+        if (userId != null || password != null) {
+            User user = isValidUser(userId, password);
+            if (user.getId() == id) return mapper.modelToDtoForSelf(user);
         }
-
+        User findUser = repository.findById(id).orElseThrow(() -> new NoFoundObjectException(
+                String.format("Пользователь с id {} не найден", id)));
+        return mapper.modelToDto(findUser);
     }
 
     /**
@@ -89,8 +88,8 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void deleteUser(Long userId, String password) {
-        isValidUser(userId, password);
-        repository.deleteById(userId);
+        User user = isValidUser(userId, password);
+        repository.delete(user);
     }
 
     /**
@@ -101,8 +100,8 @@ public class UserServiceImpl implements UserService {
      */
     private User isValidUser(Long userId, String password) {
         User user = repository.findById(userId).orElseThrow(() ->
-                new NoFoundObjectException(String.format("Пользователя с Id %ы не существует", userId)));
-        if (!(user.getPassword().equals(password))) new BaseRelationshipException(
+                new NoFoundObjectException(String.format("Пользователя с Id %s не существует", userId)));
+        if (!(user.getPassword().equals(password))) throw new BaseRelationshipException(
                 String.format("Пароль пользователя c Id %s не верен", userId));
         return user;
     }

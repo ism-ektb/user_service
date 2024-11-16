@@ -1,6 +1,7 @@
 version: '3.1'
 services:
-  user_service:
+
+  user_service-db:
     image: postgres:latest
     container_name: user_service-db
     volumes:
@@ -12,4 +13,14 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=user
 
-
+  user_service:
+    build: \
+    container_name: user_service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - user_service-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://user_service-db:5432/user
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=user

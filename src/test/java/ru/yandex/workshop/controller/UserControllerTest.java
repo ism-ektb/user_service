@@ -51,6 +51,8 @@ class UserControllerTest {
 
     }
 
+
+
     @Test
     @SneakyThrows
     void patchUser_goodResult() {
@@ -66,6 +68,7 @@ class UserControllerTest {
                 .andExpect(status().isOk());
     }
 
+
     @Test
     @SneakyThrows
     void getUser_goodResult() {
@@ -77,4 +80,6 @@ class UserControllerTest {
                 .header("userId", 1L)
                 .header("password", "password")).andExpect(status().isOk());
     }
+
+
 }
