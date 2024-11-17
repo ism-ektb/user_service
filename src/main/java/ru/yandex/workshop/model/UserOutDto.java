@@ -14,15 +14,15 @@ import lombok.Getter;
 public class UserOutDto {
 
     @Schema(description = "id", example = "42")
-    Long id;
+    private Long id;
     @Schema(description = "Имя", example = "Вова")
-    String name;
+    private String name;
     @Schema(description = "Электронная почта, отправляется только самому себе", example = "q@1.1")
-    String email;
+    private String email;
     @Schema(description = "Пароль, , отправляется только самому себе", example = "password")
     @Size(min = 3, max = 50, message = "Пароль пользователя должно содержать от 5 до 50 символов")
     @NotBlank(message = "Пароль пользователя не может быть пустыми")
-    String password;
+    private String password;
     @Schema(description = "Описание", example = "Очень крутой")
-    String aboutMe;
+    private String aboutMe;
 }

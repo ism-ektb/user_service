@@ -14,12 +14,12 @@ import lombok.experimental.SuperBuilder;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     @Column(unique = true)
-    String name;
+    private String name;
     @Column(unique = true)
-    String email;
-    String password;
+    private String email;
+    private String password;
     @Column(name = "aboutme")
-    String aboutMe;
+    private String aboutMe;
 }
