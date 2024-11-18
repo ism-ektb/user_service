@@ -1,0 +1,20 @@
+spring:
+  liquibase:
+    enabled: true
+  application:
+    name: user_service
+  sql:
+    init:
+      mode: never
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user?createDatabaseIfNotExist=true
+    driverClassName: org.postgresql.Driver
+    username: user
+    password: user
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+
