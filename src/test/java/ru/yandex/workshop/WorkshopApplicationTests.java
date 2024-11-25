@@ -8,5 +8,5 @@ class WorkshopApplicationTests {
     @Test
     void contextLoads() {
     }
-    
+
 }
