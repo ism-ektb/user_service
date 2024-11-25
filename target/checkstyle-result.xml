@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="10.14.1">
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\controller\UserController.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\exception\Error.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\exception\ErrorHandler.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\exception\ErrorResponse.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\exception\ErrResponse.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\exception\exception\BaseRelationshipException.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\exception\exception\NoFoundObjectException.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\model\mapper\AllUserMapper.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\model\mapper\PatchMapper.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\model\mapper\UserListMapper.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\model\mapper\UserMapper.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\model\User.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\model\UserInDto.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\model\UserOutDto.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\model\UserPatchDto.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\repository\UserRepository.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\service\UserService.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\service\UserServiceImpl.java">
+</file>
+<file name="C:\Users\Ivan\dev\user_service\src\main\java\ru\yandex\workshop\WorkshopApplication.java">
+</file>
+</checkstyle>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserInDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">user_service</a> &gt; <a href="index.source.html" class="el_package">ru.yandex.workshop.model</a> &gt; <span class="el_source">UserInDto.java</span></div><h1>UserInDto.java</h1><pre class="source lang-java linenums">package ru.yandex.workshop.model;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+<span class="pc" id="L14">@Builder</span>
+<span class="fc" id="L15">@NoArgsConstructor</span>
+<span class="fc" id="L16">@AllArgsConstructor</span>
+@Schema(description = &quot;Запрос на регистрацию&quot;)
+public class UserInDto {
+
+    @Schema(description = &quot;Имя&quot;, example = &quot;Вова&quot;)
+    @Size(min = 3, max = 50, message = &quot;Имя пользователя должно содержать от 3 до 50 символов&quot;)
+    @NotBlank(message = &quot;Имя пользователя не может быть пустыми&quot;)
+<span class="fc" id="L23">    private String name;</span>
+    @Schema(description = &quot;Электронная почта&quot;, example = &quot;q@1.1&quot;)
+    @Email(message = &quot;Неверный формат электронной почты&quot;)
+    @NotBlank(message = &quot;Электронная почта пользователя не может быть пустой&quot;)
+<span class="fc" id="L27">    private String email;</span>
+    @Schema(description = &quot;Пароль&quot;, example = &quot;password&quot;)
+    @Size(min = 3, max = 50, message = &quot;Пароль пользователя должно содержать от 5 до 50 символов&quot;)
+    @NotBlank(message = &quot;Пароль пользователя не может быть пустыми&quot;)
+<span class="fc" id="L31">    private String password;</span>
+    @Schema(description = &quot;Описание&quot;, example = &quot;Очень крутой&quot;)
+    @Size(min = 5, max = 200, message = &quot;Пароль пользователя должно содержать от 5 до 200 символов&quot;)
+<span class="fc" id="L34">    private String aboutMe;</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

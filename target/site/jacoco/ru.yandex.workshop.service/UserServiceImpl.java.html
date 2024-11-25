@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">user_service</a> &gt; <a href="index.source.html" class="el_package">ru.yandex.workshop.service</a> &gt; <span class="el_source">UserServiceImpl.java</span></div><h1>UserServiceImpl.java</h1><pre class="source lang-java linenums">package ru.yandex.workshop.service;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+import ru.yandex.workshop.exception.exception.BaseRelationshipException;
+import ru.yandex.workshop.exception.exception.NoFoundObjectException;
+import ru.yandex.workshop.model.User;
+import ru.yandex.workshop.model.UserInDto;
+import ru.yandex.workshop.model.UserOutDto;
+import ru.yandex.workshop.model.UserPatchDto;
+import ru.yandex.workshop.model.mapper.PatchMapper;
+import ru.yandex.workshop.model.mapper.UserListMapper;
+import ru.yandex.workshop.model.mapper.UserMapper;
+import ru.yandex.workshop.repository.UserRepository;
+
+import java.util.List;
+
+@Service
+<span class="fc" id="L21">@RequiredArgsConstructor</span>
+public class UserServiceImpl implements UserService {
+
+    private final UserRepository repository;
+    private final UserMapper mapper;
+    private final PatchMapper patchMapper;
+    private final UserListMapper listMapper;
+
+    /**
+     * Создание новоо пользователя
+     *
+     * @param userInDto
+     */
+    @Override
+    public UserOutDto create(UserInDto userInDto) {
+<span class="fc" id="L36">        User user = repository.save(mapper.dtoToModel(userInDto));</span>
+<span class="fc" id="L37">        return mapper.modelToDtoForSelf(user);</span>
+    }
+
+    /**
+     * Изменение данных о пользователе
+     *
+     * @param userId
+     * @param password
+     * @param userPatchDto
+     */
+    @Override
+    public UserOutDto patch(Long userId, String password, UserPatchDto userPatchDto) {
+<span class="fc" id="L49">        User user = isValidUser(userId, password);</span>
+<span class="fc" id="L50">        User newUser = patchMapper.patch(user, userPatchDto);</span>
+<span class="fc" id="L51">        return mapper.modelToDtoForSelf(repository.save(newUser));</span>
+    }
+
+    /**
+     * Получение данных о пользователе, пароль и емайл сообщаются только самому пользователю
+     *
+     * @param userId
+     * @param password
+     * @param id
+     */
+    @Override
+    public UserOutDto getUserById(Long userId, String password, Long id) {
+<span class="pc bpc" id="L63" title="3 of 4 branches missed.">        if (userId != null || password != null) {</span>
+<span class="fc" id="L64">            User user = isValidUser(userId, password);</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">            if (user.getId() == id) return mapper.modelToDtoForSelf(user);</span>
+        }
+<span class="pc" id="L67">        User findUser = repository.findById(id).orElseThrow(() -&gt; new NoFoundObjectException(</span>
+<span class="nc" id="L68">                String.format(&quot;Пользователь с id {} не найден&quot;, id)));</span>
+<span class="fc" id="L69">        return mapper.modelToDto(findUser);</span>
+    }
+
+    /**
+     * Получение списка всех пользователей, пароль не сообщается
+     *
+     * @param pageRequest
+     */
+    @Override
+    public List&lt;UserOutDto&gt; getAllUser(PageRequest pageRequest) {
+<span class="fc" id="L79">        Page&lt;User&gt; users = repository.findAll(pageRequest);</span>
+<span class="fc" id="L80">        return listMapper.modelsToDtos(users.getContent());</span>
+    }
+
+    /**
+     * Удаление данных о пользователе
+     *
+     * @param userId
+     * @param password
+     */
+    @Override
+    public void deleteUser(Long userId, String password) {
+<span class="fc" id="L91">        User user = isValidUser(userId, password);</span>
+<span class="fc" id="L92">        repository.delete(user);</span>
+<span class="fc" id="L93">    }</span>
+
+    /**
+     * Проверка вкодных данных на валидность
+     * @param userId
+     * @param password
+     * @return
+     */
+    private User isValidUser(Long userId, String password) {
+<span class="fc" id="L102">        User user = repository.findById(userId).orElseThrow(() -&gt;</span>
+<span class="nc" id="L103">                new NoFoundObjectException(String.format(&quot;Пользователя с Id %s не существует&quot;, userId)));</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (!(user.getPassword().equals(password))) throw new BaseRelationshipException(</span>
+<span class="fc" id="L105">                String.format(&quot;Пароль пользователя c Id %s не верен&quot;, userId));</span>
+<span class="fc" id="L106">        return user;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

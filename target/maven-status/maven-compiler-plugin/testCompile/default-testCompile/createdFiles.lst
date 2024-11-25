@@ -1,0 +1,4 @@
+ru\yandex\workshop\WorkshopApplicationTests.class
+ru\yandex\workshop\service\UserServiceImplTest.class
+ru\yandex\workshop\model\mapper\UserMapperTest.class
+ru\yandex\workshop\controller\UserControllerTest.class

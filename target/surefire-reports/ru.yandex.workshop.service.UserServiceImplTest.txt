@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ru.yandex.workshop.service.UserServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.001 s -- in ru.yandex.workshop.service.UserServiceImplTest

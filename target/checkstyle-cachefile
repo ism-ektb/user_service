@@ -1,0 +1,19 @@
+#Tue Nov 26 00:01:58 MSK 2024
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\model\\User.java=1732553178277
+configuration*?=32B68EC7706A0D7CDF68EB61008A21292DD02522
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\WorkshopApplication.java=1732553178263
+module-resource*?\:suppressions.xml=B6C56B864127A55986A2D096B53D68E97E9F54B7
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\exception\\exception\\BaseRelationshipException.java=1732553178273
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\model\\UserInDto.java=1732553178278
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\repository\\UserRepository.java=1732568166644
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\model\\mapper\\PatchMapper.java=1732568198133
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\model\\UserPatchDto.java=1732568166653
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\exception\\Error.java=1732553178268
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\model\\UserOutDto.java=1732568166632
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\controller\\UserController.java=1732553178265
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\exception\\ErrorResponse.java=1732553178271
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\exception\\exception\\NoFoundObjectException.java=1732553178275
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\exception\\ErrResponse.java=1732553178267
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\model\\mapper\\AllUserMapper.java=1732553178284
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\model\\mapper\\UserListMapper.java=1732553178286
+C\:\\Users\\Ivan\\dev\\user_service\\src\\main\\java\\ru\\yandex\\workshop\\model\\mapper\\UserMapper.java=1732568166628
