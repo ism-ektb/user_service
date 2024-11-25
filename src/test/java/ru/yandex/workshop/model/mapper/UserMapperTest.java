@@ -1,5 +1,6 @@
 package ru.yandex.workshop.model.mapper;
 
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +9,11 @@ import ru.yandex.workshop.model.User;
 import ru.yandex.workshop.model.UserOutDto;
 
 
+@SpringBootTest
 class UserMapperTest {
 
-
-    private final UserMapper mapper = new UserMapperImpl();
+    @Autowired
+    private  UserMapper mapper;
 
 
     @Test
