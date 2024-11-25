@@ -37,7 +37,5 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
     - name: test with Maven
       run: mvn test
