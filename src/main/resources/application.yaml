@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   liquibase:
     enabled: true
@@ -7,10 +9,10 @@ spring:
     init:
       mode: never
   datasource:
-    url: jdbc:postgresql://localhost:5432/user?createDatabaseIfNotExist=true
+#    url: jdbc:postgresql://localhost:5432/user?createDatabaseIfNotExist=true
     driverClassName: org.postgresql.Driver
-    username: user
-    password: user
+#    username: user
+#    password: user
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
