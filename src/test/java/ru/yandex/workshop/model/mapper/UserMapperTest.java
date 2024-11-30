@@ -5,16 +5,25 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 import ru.yandex.workshop.model.User;
 import ru.yandex.workshop.model.UserOutDto;
 
 
 @SpringBootTest
+@Testcontainers
 class UserMapperTest {
 
     @Autowired
     private  UserMapper mapper;
 
+    @Container
+    @ServiceConnection
+    static PostgreSQLContainer<?> postgreSQLContainer =
+            new PostgreSQLContainer<>("postgres:15");
 
     @Test
     void modelToDtoForSelf() {
