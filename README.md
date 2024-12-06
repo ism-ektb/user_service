@@ -6,7 +6,7 @@
 - Марина https://github.com/marina52746
 - Михайлов Илья https://github.com/ism-ektb
 - Шведов Алексей https://github.com/Aleksey01091993
-В проект входитят следующие микросервисы:
+### В проект входитят следующие микросервисы:
 - user_service https://github.com/ism-ektb/user_service
 - event_service https://github.com/ism-ektb/event_service
 - task_service https://github.com/ism-ektb/task_service
